@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -11,7 +10,7 @@ const NAV_LINKS = [
 const SOCIAL = [
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com/in/harsh-aryan',
+    href: 'https://www.linkedin.com/in/harsh-aryan-68a854153',
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
         <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
@@ -21,7 +20,7 @@ const SOCIAL = [
   },
   {
     name: 'Email',
-    href: 'mailto:harryaryan1110@gmail.com',
+    href: 'mailto:harshsinha0509@gmail.com',
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -31,7 +30,7 @@ const SOCIAL = [
   },
   {
     name: 'Phone',
-    href: 'tel:+919310034979',
+    href: 'tel:+919217664741',
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" strokeLinecap="round" strokeLinejoin="round"/>
@@ -44,11 +43,10 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="relative bg-obsidian-800 border-t border-white/[0.05]">
+    <footer className="relative bg-obsidian-800 border-t border-white/[0.05]">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Main footer content */}
         <div className="py-14 lg:py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
@@ -61,13 +59,13 @@ export default function Footer() {
                   Harsh Aryan
                 </div>
                 <div className="font-dm text-gold-500/50 text-[9px] tracking-[0.35em] uppercase mt-0.5">
-                  Luxury Real Estate Sales
+                  HA Realty · Young Realtor
                 </div>
               </div>
             </div>
 
             <p className="font-dm text-white/35 text-sm leading-relaxed max-w-xs mb-6">
-              Closing ultra-luxury real estate deals at 24. Based in Noida, operating across the premium NCR market.
+              India's rising luxury real estate closer. Based in Noida, operating across the premium NCR market.
             </p>
 
             <div className="flex items-center gap-3">
@@ -113,13 +111,13 @@ export default function Footer() {
               {[
                 {
                   label: 'Email',
-                  value: 'harryaryan1110@gmail.com',
-                  href: 'mailto:harryaryan1110@gmail.com',
+                  value: 'harshsinha0509@gmail.com',
+                  href: 'mailto:harshsinha0509@gmail.com',
                 },
                 {
                   label: 'Phone',
-                  value: '+91 9310 034 979',
-                  href: 'tel:+919310034979',
+                  value: '+91 9217 664 741',
+                  href: 'tel:+919217664741',
                 },
                 {
                   label: 'Location',
@@ -127,8 +125,8 @@ export default function Footer() {
                   href: null,
                 },
                 {
-                  label: 'Company',
-                  value: 'Star Estates',
+                  label: 'Brand',
+                  value: 'HA Realty',
                   href: null,
                 },
               ].map((item) => (
@@ -155,7 +153,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/[0.05] py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-dm text-white/20 text-xs">
-            © {year} Harsh Aryan. All rights reserved.
+            © {year} Harsh Aryan · HA Realty. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">

@@ -6,7 +6,7 @@ export default function CTA() {
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section ref={ref} className="relative py-32 lg:py-44 bg-obsidian-900 overflow-hidden">
+    <section ref={ref} id="contact" className="relative py-32 lg:py-44 bg-obsidian-900 overflow-hidden">
       {/* Dramatic background */}
       <div className="absolute inset-0">
         <img
@@ -18,11 +18,9 @@ export default function CTA() {
         <div className="absolute inset-0 bg-gradient-to-r from-obsidian-900 via-obsidian-900/70 to-obsidian-900" />
       </div>
 
-      {/* Gold accent lines */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/15 to-transparent" />
 
-      {/* Decorative radial */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <motion.div
           animate={{ scale: [1, 1.05, 1], opacity: [0.03, 0.06, 0.03] }}
@@ -82,7 +80,7 @@ export default function CTA() {
           className="flex flex-wrap items-center justify-center gap-4 mb-16"
         >
           <motion.a
-            href="mailto:harryaryan1110@gmail.com?subject=Let's Connect — Harsh Aryan Portfolio"
+            href="mailto:harshsinha0509@gmail.com?subject=Let's Connect — HA Realty"
             className="group relative px-10 py-4 bg-gold-500 text-obsidian-900 font-dm text-[11px] tracking-[0.3em] uppercase font-semibold overflow-hidden hover:shadow-[0_0_60px_rgba(201,168,76,0.4)] transition-shadow duration-300"
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.97 }}
@@ -98,7 +96,7 @@ export default function CTA() {
 
           <motion.a
             href="/Harsh_Aryan_Resume.pdf"
-            download
+            download="Harsh_Aryan_Resume.pdf"
             className="px-10 py-4 border border-gold-500/40 text-gold-400 font-dm text-[11px] tracking-[0.3em] uppercase hover:bg-gold-500/10 hover:border-gold-500/60 transition-all duration-300 flex items-center gap-2"
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.97 }}
@@ -110,7 +108,7 @@ export default function CTA() {
           </motion.a>
 
           <motion.a
-            href="https://linkedin.com/in/harsh-aryan"
+            href="https://www.linkedin.com/in/harsh-aryan-68a854153"
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 border border-white/15 text-white/60 font-dm text-[11px] tracking-[0.3em] uppercase hover:border-white/30 hover:text-white/80 transition-all duration-300 flex items-center gap-2"
@@ -140,8 +138,8 @@ export default function CTA() {
                   <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="1.5"/>
                 </svg>
               ),
-              text: 'harryaryan1110@gmail.com',
-              href: 'mailto:harryaryan1110@gmail.com',
+              text: 'harshsinha0509@gmail.com',
+              href: 'mailto:harshsinha0509@gmail.com',
             },
             {
               icon: (
@@ -149,8 +147,8 @@ export default function CTA() {
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               ),
-              text: '+91 9310 034 979',
-              href: 'tel:+919310034979',
+              text: '+91 9217 664 741',
+              href: 'tel:+919217664741',
             },
             {
               icon: (

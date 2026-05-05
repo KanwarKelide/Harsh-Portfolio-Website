@@ -5,7 +5,7 @@ const HERO_STATS = [
   { value: '50+', label: 'Deals Facilitated' },
   { value: '₹100Cr+', label: 'Portfolio Value' },
   { value: '200+', label: 'HNI Clients' },
-  { value: '24', label: 'Years Old' },
+  { value: 'NCR', label: 'Luxury Market' },
 ];
 
 export default function Hero() {
@@ -31,7 +31,6 @@ export default function Hero() {
           alt="Luxury interior"
           className="w-full h-full object-cover"
         />
-        {/* Layered overlays for cinematic depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian-900/60 via-obsidian-900/75 to-obsidian-900" />
         <div className="absolute inset-0 bg-gradient-to-r from-obsidian-900/85 via-obsidian-900/40 to-obsidian-900/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900 via-transparent to-obsidian-900/30" />
@@ -66,7 +65,7 @@ export default function Hero() {
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse" />
               <span className="font-dm text-gold-400/80 text-[10px] tracking-[0.45em] uppercase">
-                Star Estates · Noida, India
+                HA Realty · Noida, India
               </span>
             </div>
           </motion.div>
@@ -104,7 +103,7 @@ export default function Hero() {
           >
             Meet{' '}
             <span className="text-gold-400 font-medium not-italic">Harsh Aryan</span>
-            {' '}— closing high-value deals at 24.
+            {' '}— India's rising luxury real estate closer.
             <br />
             Where discipline meets desire, and desire becomes a deal.
           </motion.p>
@@ -117,7 +116,7 @@ export default function Hero() {
             className="flex flex-wrap items-center gap-4"
           >
             <motion.a
-              href="#projects"
+              href="#about"
               className="group relative px-8 py-4 bg-gold-500 text-obsidian-900 font-dm text-[11px] tracking-[0.28em] uppercase font-semibold overflow-hidden transition-all duration-300 hover:shadow-[0_0_50px_rgba(201,168,76,0.4)]"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.97 }}

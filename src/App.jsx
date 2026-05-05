@@ -2,7 +2,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
-import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Testimonials from './components/Testimonials';
 import PersonalEdge from './components/PersonalEdge';
@@ -17,7 +16,6 @@ export default function App() {
         <Hero />
         <About />
         <Experience />
-        <Projects />
         <Skills />
         <Testimonials />
         <PersonalEdge />

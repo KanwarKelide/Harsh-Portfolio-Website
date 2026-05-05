@@ -40,15 +40,11 @@ export default function Experience() {
 
   return (
     <section id="experience" ref={ref} className="relative py-32 lg:py-40 bg-obsidian-800 overflow-hidden">
-      {/* Subtle gradient top */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/15 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/8 to-transparent" />
-
-      {/* BG decoration */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-72 h-72 bg-gold-500/[0.03] rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Section header */}
         <div className="mb-16 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -72,7 +68,7 @@ export default function Experience() {
         </div>
 
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-start">
-          {/* Left — Role details */}
+          {/* Left — Role card */}
           <div className="lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -84,10 +80,10 @@ export default function Experience() {
 
               <div className="flex items-start justify-between mb-6">
                 <div>
-                  <div className="font-dm text-[9px] tracking-[0.4em] uppercase text-gold-500/60 mb-2">Current Role</div>
-                  <h3 className="font-cormorant text-white text-2xl font-semibold">Star Estates</h3>
+                  <div className="font-dm text-[9px] tracking-[0.4em] uppercase text-gold-500/60 mb-2">Current Venture</div>
+                  <h3 className="font-cormorant text-white text-2xl font-semibold">HA Realty</h3>
                   <p className="font-dm text-gold-400 text-[11px] tracking-[0.2em] uppercase mt-1.5">
-                    Sales Executive
+                    Founder & Sales Head
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5 px-3 py-1 bg-green-400/10 border border-green-400/20">
@@ -111,9 +107,9 @@ export default function Experience() {
               </div>
 
               <div className="border-t border-white/[0.06] pt-6">
-                <p className="font-dm text-white/30 text-[9px] tracking-[0.35em] uppercase mb-3">Key Brands</p>
+                <p className="font-dm text-white/30 text-[9px] tracking-[0.35em] uppercase mb-3">Partner Brands</p>
                 <div className="space-y-2">
-                  {['Jacob & Co Residences', 'Elie Saab Villas', 'Star Estates Premium'].map((brand) => (
+                  {['Jacob & Co Residences', 'Elie Saab Villas', 'NCR Premium Segment'].map((brand) => (
                     <div key={brand} className="flex items-center gap-2">
                       <div className="w-4 h-px bg-gold-500/50" />
                       <span className="font-cormorant text-gold-400/70 italic text-sm">{brand}</span>
@@ -126,7 +122,6 @@ export default function Experience() {
 
           {/* Right — Highlights & story cards */}
           <div className="lg:col-span-3 space-y-6">
-            {/* Responsibilities */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -152,7 +147,6 @@ export default function Experience() {
               </div>
             </motion.div>
 
-            {/* Story cards */}
             <div className="grid sm:grid-cols-3 gap-4">
               {STORY_CARDS.map((card, i) => (
                 <motion.div

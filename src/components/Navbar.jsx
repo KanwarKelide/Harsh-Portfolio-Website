@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -12,12 +11,9 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 60);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -60,7 +56,7 @@ export default function Navbar() {
                 Harsh Aryan
               </span>
               <span className="font-dm text-gold-500/60 text-[9px] tracking-[0.38em] uppercase mt-0.5">
-                Luxury Real Estate
+                HA Realty
               </span>
             </div>
           </motion.a>
@@ -81,7 +77,7 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-4">
             <motion.a
-              href="mailto:harryaryan1110@gmail.com"
+              href="mailto:harshsinha0509@gmail.com"
               className="px-6 py-2.5 border border-gold-500/40 text-gold-400 font-dm text-[10px] tracking-[0.25em] uppercase hover:bg-gold-500 hover:text-obsidian-900 hover:border-gold-500 transition-all duration-300 font-medium"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
@@ -142,7 +138,7 @@ export default function Navbar() {
             </div>
             <div className="px-10 pb-12">
               <a
-                href="mailto:harryaryan1110@gmail.com"
+                href="mailto:harshsinha0509@gmail.com"
                 className="block w-full text-center py-4 border border-gold-500/50 text-gold-400 font-dm text-xs tracking-[0.3em] uppercase hover:bg-gold-500 hover:text-obsidian-900 transition-all duration-300"
                 onClick={() => setMenuOpen(false)}
               >
