@@ -77,7 +77,7 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-4">
             <motion.a
-              href="mailto:harshsinha0509@gmail.com"
+              href="mailto:harshsinha0591@gmail.com"
               className="px-6 py-2.5 border border-gold-500/40 text-gold-400 font-dm text-[10px] tracking-[0.25em] uppercase hover:bg-gold-500 hover:text-obsidian-900 hover:border-gold-500 transition-all duration-300 font-medium"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
@@ -138,7 +138,7 @@ export default function Navbar() {
             </div>
             <div className="px-10 pb-12">
               <a
-                href="mailto:harshsinha0509@gmail.com"
+                href="mailto:harshsinha0591@gmail.com"
                 className="block w-full text-center py-4 border border-gold-500/50 text-gold-400 font-dm text-xs tracking-[0.3em] uppercase hover:bg-gold-500 hover:text-obsidian-900 transition-all duration-300"
                 onClick={() => setMenuOpen(false)}
               >

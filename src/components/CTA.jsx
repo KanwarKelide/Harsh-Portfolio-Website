@@ -80,7 +80,7 @@ export default function CTA() {
           className="flex flex-wrap items-center justify-center gap-4 mb-16"
         >
           <motion.a
-            href="mailto:harshsinha0509@gmail.com?subject=Let's Connect — HA Realty"
+            href="mailto:harshsinha0591@gmail.com?subject=Let's Connect — HA Realty"
             className="group relative px-10 py-4 bg-gold-500 text-obsidian-900 font-dm text-[11px] tracking-[0.3em] uppercase font-semibold overflow-hidden hover:shadow-[0_0_60px_rgba(201,168,76,0.4)] transition-shadow duration-300"
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.97 }}
@@ -138,8 +138,8 @@ export default function CTA() {
                   <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="1.5"/>
                 </svg>
               ),
-              text: 'harshsinha0509@gmail.com',
-              href: 'mailto:harshsinha0509@gmail.com',
+              text: 'harshsinha0591@gmail.com',
+              href: 'mailto:harshsinha0591@gmail.com',
             },
             {
               icon: (

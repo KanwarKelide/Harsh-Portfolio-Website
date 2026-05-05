@@ -23,33 +23,27 @@ function AnimatedCounter({ end, suffix = '', duration = 2200 }) {
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
+/* Brand imagery — cinematic photography that represents each brand's world */
 const BRANDS = [
   {
     name: 'JACOB & CO.',
     sub: 'Residences',
-    desc: 'Where the world\'s most iconic watchmaker meets architecture. Precision living at its pinnacle.',
-    roman: 'I',
+    tagline: 'Where Timeless Precision Meets Architecture',
+    desc: "The world's most iconic watchmaker now crafts residences with the same obsessive precision as their timepieces. Every detail. Every finish. Impossibly perfect.",
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=90',
+    fallback: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=90',
     accent: 'Swiss precision. Architectural mastery.',
-    bg: 'from-[#1a1408] to-obsidian-800',
-    lineColor: 'bg-gold-500',
+    align: 'left',
   },
   {
     name: 'ELIE SAAB',
     sub: 'Villas',
-    desc: 'Fashion\'s most celebrated couture house — now written in marble, glass, and light.',
-    roman: 'II',
+    tagline: 'Haute Couture Translated Into Living Spaces',
+    desc: "Fashion's most celebrated name, now in marble and glass. Elie Saab's signature — sculpted silhouettes, cascading light, permanent elegance — written into every room.",
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=90',
+    fallback: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=90',
     accent: 'Haute couture. Elevated living.',
-    bg: 'from-[#0d1018] to-obsidian-800',
-    lineColor: 'bg-gold-400',
-  },
-  {
-    name: 'HA REALTY',
-    sub: 'The Vision',
-    desc: 'A future luxury real estate brand built on trust, taste, and the art of the perfect close.',
-    roman: 'III',
-    accent: 'Your vision. His execution.',
-    bg: 'from-[#0f0f0a] to-obsidian-800',
-    lineColor: 'bg-gold-300',
+    align: 'right',
   },
 ];
 
@@ -64,7 +58,7 @@ const STATS = [
   { value: 50, suffix: '+', label: 'Deals Facilitated', sub: 'High-value transactions' },
   { value: 200, suffix: '+', label: 'HNI Clients', sub: 'High-net-worth conversations' },
   { value: 15, suffix: '+', label: 'Luxury Projects', sub: 'Premium portfolio' },
-  { value: 3, suffix: '', label: 'Iconic Brands', sub: 'Jacob & Co · Elie Saab · HA Realty' },
+  { value: 2, suffix: '', label: 'Iconic Brands', sub: 'Jacob & Co · Elie Saab' },
 ];
 
 export default function About() {
@@ -74,7 +68,7 @@ export default function About() {
   return (
     <section id="about" ref={ref} className="relative bg-obsidian-900 overflow-hidden">
 
-      {/* ── BRAND ECOSYSTEM ────────────────────────────────────────────────── */}
+      {/* ── BRAND ECOSYSTEM ─────────────────────────────────────────────────── */}
       <div className="border-t border-white/[0.05]">
         {/* Header */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-24 pb-14">
@@ -99,71 +93,119 @@ export default function About() {
           </motion.h2>
         </div>
 
-        {/* Brand cards — full bleed */}
-        <div className="grid md:grid-cols-3 border-t border-white/[0.05]">
+        {/* Full-bleed brand image cards */}
+        <div className="grid md:grid-cols-2">
           {BRANDS.map((brand, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.9, delay: 0.15 + i * 0.15 }}
-              className={`relative group bg-gradient-to-b ${brand.bg} border-r border-white/[0.04] last:border-r-0 overflow-hidden cursor-default`}
+              transition={{ duration: 1, delay: 0.2 + i * 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="relative group overflow-hidden cursor-default"
+              style={{ minHeight: '520px' }}
             >
-              {/* Hover glow */}
-              <div className="absolute inset-0 bg-gold-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              {/* Background image */}
+              <div className="absolute inset-0">
+                <motion.img
+                  src={brand.image}
+                  alt={brand.name}
+                  className="w-full h-full object-cover"
+                  animate={{ scale: 1 }}
+                  whileHover={{ scale: 1.04 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  onError={(e) => { e.target.src = brand.fallback; }}
+                />
+                {/* Deep gradient overlay — bottom-heavy for text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900 via-obsidian-900/70 to-obsidian-900/20" />
+                {/* Side gradient based on alignment */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${
+                  brand.align === 'left'
+                    ? 'from-obsidian-900/40 to-transparent'
+                    : 'from-transparent to-obsidian-900/40'
+                }`} />
+                {/* Hover gold tint */}
+                <div className="absolute inset-0 bg-gold-500/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              </div>
 
-              <div className="relative p-10 lg:p-12 flex flex-col min-h-[340px]">
-                {/* Roman numeral */}
-                <div className="font-cormorant text-white/[0.06] text-7xl font-light absolute top-6 right-8 leading-none select-none group-hover:text-white/[0.08] transition-colors duration-500">
-                  {brand.roman}
+              {/* Divider between cards */}
+              {i === 0 && (
+                <div className="hidden md:block absolute top-0 right-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold-500/30 to-transparent z-10" />
+              )}
+
+              {/* Content */}
+              <div className="relative z-10 flex flex-col justify-end h-full p-10 lg:p-14" style={{ minHeight: '520px' }}>
+                {/* Brand number */}
+                <div className="absolute top-8 right-10 font-cormorant text-white/10 text-6xl font-light select-none group-hover:text-white/15 transition-colors duration-500">
+                  {String(i + 1).padStart(2, '0')}
                 </div>
 
-                {/* Brand name — the star of the card */}
-                <div className="flex-1 flex flex-col justify-center">
+                {/* Brand name — the hero element */}
+                <div className="mt-auto">
+                  {/* Sub label */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.5 + i * 0.15 }}
+                    className="flex items-center gap-3 mb-4"
+                  >
+                    <div className="w-8 h-px bg-gold-500" />
+                    <span className="font-dm text-gold-400/70 text-[9px] tracking-[0.5em] uppercase">
+                      {brand.sub}
+                    </span>
+                  </motion.div>
+
+                  {/* Main brand name */}
                   <motion.h3
-                    className="font-cormorant text-[clamp(1.8rem,3.5vw,2.8rem)] font-light text-white tracking-[0.08em] mb-1 group-hover:text-gold-300 transition-colors duration-500 leading-none"
-                    whileHover={{ letterSpacing: '0.12em' }}
-                    transition={{ duration: 0.4 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.55 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                    className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] font-light text-white tracking-[0.05em] leading-none mb-1 group-hover:text-gold-300 transition-colors duration-500"
                   >
                     {brand.name}
                   </motion.h3>
 
-                  {/* Gold separator line */}
-                  <div className="flex items-center gap-3 mb-5">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={isInView ? { width: '3rem' } : {}}
-                      transition={{ duration: 0.8, delay: 0.5 + i * 0.15 }}
-                      className={`h-px ${brand.lineColor}`}
-                    />
-                    <span className="font-dm text-gold-500/50 text-[9px] tracking-[0.45em] uppercase">
-                      {brand.sub}
-                    </span>
-                  </div>
+                  {/* Gold rule */}
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={isInView ? { scaleX: 1 } : {}}
+                    transition={{ duration: 1, delay: 0.7 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                    className="h-px bg-gradient-to-r from-gold-500 via-gold-400 to-transparent origin-left mb-5"
+                  />
 
-                  <p className="font-dm text-white/40 text-sm leading-relaxed mb-6">
+                  {/* Tagline */}
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.7, delay: 0.75 + i * 0.15 }}
+                    className="font-cormorant italic text-white/50 text-lg mb-4 group-hover:text-white/65 transition-colors duration-500"
+                  >
+                    {brand.tagline}
+                  </motion.p>
+
+                  {/* Description — hidden until hover */}
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.7, delay: 0.85 + i * 0.15 }}
+                    className="font-dm text-white/35 text-sm leading-relaxed max-w-sm group-hover:text-white/50 transition-colors duration-500"
+                  >
                     {brand.desc}
-                  </p>
-                </div>
+                  </motion.p>
 
-                {/* Bottom accent line */}
-                <div className="mt-auto pt-6 border-t border-white/[0.06]">
-                  <p className="font-cormorant italic text-gold-500/50 text-sm group-hover:text-gold-500/70 transition-colors duration-400">
-                    {brand.accent}
-                  </p>
+                  {/* Bottom accent */}
+                  <div className="mt-6 pt-5 border-t border-white/[0.08]">
+                    <p className="font-dm text-gold-500/40 text-[10px] tracking-[0.35em] uppercase group-hover:text-gold-500/60 transition-colors duration-400">
+                      {brand.accent}
+                    </p>
+                  </div>
                 </div>
               </div>
-
-              {/* Bottom border reveal on hover */}
-              <motion.div
-                className={`absolute bottom-0 left-0 right-0 h-px ${brand.lineColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-              />
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* ── STORY + STATS ───────────────────────────────────────────────────── */}
+      {/* ── STORY + STATS ────────────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
@@ -251,7 +293,7 @@ export default function About() {
               ))}
             </div>
 
-            {/* Brand logos strip */}
+            {/* Brand names strip */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -263,8 +305,8 @@ export default function About() {
               </p>
               <div className="flex items-center justify-center gap-8">
                 {['JACOB & CO.', 'ELIE SAAB'].map((name, i) => (
-                  <div key={i} className="text-center group">
-                    <div className="font-cormorant text-white/30 text-base tracking-[0.15em] group-hover:text-gold-400/70 transition-colors duration-400">
+                  <div key={i} className="text-center group cursor-default">
+                    <div className="font-cormorant text-white/35 text-base tracking-[0.15em] group-hover:text-gold-400/70 transition-colors duration-400">
                       {name}
                     </div>
                   </div>
